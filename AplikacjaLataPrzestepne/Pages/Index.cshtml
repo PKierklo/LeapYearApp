@@ -1,0 +1,39 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Rok przestępny";
+}
+
+<style>
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-control {
+        width: 300px;
+    }
+
+    .text-danger {
+        color: red;
+    }
+</style>
+
+<div>
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="leap_year.Rok">Rok:</label>
+            <input asp-for="leap_year.Rok" class="form-control" required />
+            <span asp-validation-for="leap_year.Rok" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="leap_year.Imie">Imię:</label>
+            <input asp-for="leap_year.Imie" class="form-control" /><br />
+            <span asp-validation-for="leap_year.Imie" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Zatwierdź</button>
+    </form>
+</div>
+
+<div class="mt-3">
+    <p>@ViewData["message"]</p>
+</div>
